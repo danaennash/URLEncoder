@@ -14,7 +14,7 @@ namespace URLEncoder
                 Console.WriteLine("NAEK47 CUSTOM URL GENERATOR\n");
                 Console.WriteLine("Wut is da project name:\n");
                 string PN = Console.ReadLine();
-                if (IsValid(PN) is 1)
+                if (IsValid(PN) is false)
             {
                 goto firststep;
             }
@@ -23,7 +23,7 @@ namespace URLEncoder
             nextstep:
             Console.WriteLine("Please enter an activity name:\n");
             string AN = Console.ReadLine();
-            if (IsValid(AN) is 1)
+            if (IsValid(AN) is false)
             {
                 goto nextstep;
             }
@@ -59,10 +59,10 @@ namespace URLEncoder
                 if (character <= 0x1F || character == 0x7F)
                 {
                     Console.WriteLine("ERROR. Cannot Use Control Character. Try Again.");
-                    return 1;
+                    return false;
                 }
             }
-            return 0;
+            return true;
         }
 
 
