@@ -51,7 +51,9 @@ namespace URLEncoder
                  {
                     return String.Format(UrlTemp, PN, AN);
                  }
-               static string CheckInput(string input)
+        
+        
+         static string CheckInput(string input)
         {
             string[] illegal = new string[] { " ", "/", "?", ":", "@", ";", "&", "=", "+", "$", ",", "{", "}", "|", "\\", "^", "[", "]", "`" };
             string[] replacement = new string[] { "%20", "%2F", "%3F", "%40", "%3B", "%26", "%3D", "%2B","%24", "%2C", "%7B", "%7D", "%7C", "%5C", "%5E", "%5B", "%5D", "%60" };
@@ -61,12 +63,13 @@ namespace URLEncoder
                 int index = Array.IndexOf(illegal, element);
 
                 if (input.Contains(element))
-                {
-                    input = input.Replace(element, replacement[index]);
-                }
+                        {
+                            input = input.Replace(element, replacement[index]);
+                        }
             }
             return String.Format(input);
         }
+        
 
         static bool IsValid(string input)
         {
