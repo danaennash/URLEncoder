@@ -2,9 +2,13 @@ using System;
 
     namespace URLEncoder
     {
-        public int CheckForBadCode(string Code)
+        public int CheckForBadCode(string CheckBC)
         {
-            if (Code == "%00")
+            if (Code == "%00"||"%01"||"%02"||"%03"||"%04"||"%05"||"%06"||"%07"||"%08"||"%09"){
+                
+                Console.WriteLine("Not valid, Dat's a control character");
+                return 1;
+            }
         }
         class Program
         {
