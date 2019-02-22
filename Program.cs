@@ -21,7 +21,7 @@ using System;
 
         public int CheckForBadCode(string CheckBC)
         {
-            if (CheckBC == "%00"){
+            if (CheckBC == "%00"|| "%01"|| "%02"|| "%03"|| "%04"|| "%05"|| "%06"|| "%07"|| "%08"|| "%07"|| "%08"|| "%09"){
                 
                 console.WriteLine("Not valid, Dat's a control character.");
                 return 1;
