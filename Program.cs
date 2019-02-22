@@ -68,7 +68,7 @@ namespace URLEncoder
                 value = value.Replace(">", "%3E");
                 value = value.Replace("#", "%23");
                 value = value.Replace("%", "%25");
-                value = value.Replace(" " ", "%22");
+                value = value.Replace(""", "%22");
                 value = value.Replace(";", "%3B");
                 value = value.Replace("/", "%2F");
                 value = value.Replace("?", "%3F");
