@@ -38,12 +38,12 @@ namespace URLEncoder
             switch (respond)
                     {
                         case "yes":
-                        goto firststep;
+                                goto firststep;
                         case "no":
-                        break;
+                                break;
                         default:
-                            Console.WriteLine("Not an option. Try Again.\n");
-                            goto finalstep;
+                                Console.WriteLine("Not an option. Try Again.\n");
+                                goto finalstep;
                     }
         }
 
