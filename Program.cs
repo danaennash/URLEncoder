@@ -6,6 +6,9 @@ using System;
         {
             static void Main(string[] args){
                 
+                        static string UrlTemp = https://companyserver.com/content/[project_name]/files/[activity_name]/[activity_name]Report.pdf (Links to an external site.)Links to an external site.;
+
+                
                 console.WriteLine("NAEK47 URL GENERATOR\n");
                 string project_name = "";
                 string project_activity = "";
@@ -28,7 +31,6 @@ using System;
                     project_activity = EncodeInput(project_activity,FPA);
                 
                 console.WriteLine("A NAEK47 URL has been created:\n");
-                console.WriteLine("https://companyserver.com/content/{0}/files/{1}/{1}Report.pdf", FPN, FPA);
                 
                 c:
                     Console.WriteLine("Want another custom NAEK URL? (y/n) ");
@@ -38,7 +40,7 @@ using System;
             {
                 case "y":
                     goto a;
-                case "b":
+                case "n":
                     break;
                 default:
                     Console.WriteLine("You made an invalid choice.\n");
@@ -118,3 +120,8 @@ using System;
                 FirstCheck = Output;
                 return Output;
          }
+
+        static string CreateUrl(string FPN, string FPA)
+        {
+            return String.Format(UrlTemp, FPN, FPA);
+        }
