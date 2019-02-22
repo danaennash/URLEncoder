@@ -49,7 +49,7 @@ namespace URLEncoder
 
                 static string CustomURLMaker(string PN, string AN)
                  {
-                    return String.Format(Urltemp, PN, AN);
+                    return String.Format(UrlTemp, PN, AN);
                  }
         
         static bool IsValid(string input)
