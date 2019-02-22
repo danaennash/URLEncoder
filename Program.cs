@@ -6,21 +6,29 @@ using System;
         {
             static void Main(string[] args){
                 
-                console.WriteLine("NAEK47 URL GENERATOR");
+                console.WriteLine("NAEK47 URL GENERATOR\n");
                 string project_name = "";
                 string project_activity = "";
                 string FPN = "";
                 string FPA = "";
                 
                 a:
-                    console.WriteLine("Enter da project name:");
+                    console.WriteLine("Enter da project name:\n");
                     project_name = Console.ReadLine();
                     if(FirstCheck(project_name) == 1){
                         goto a;
                     }
-                    
-                    
+                    project_name = EncodeInput(project_name,FPN);
+                b:
+                    console.WriteLine("Enter da activity name:\n");
+                    project_activity = Console.ReadLine();
+                    if(FirstCheck(project_activity) == 1){
+                        goto b;
+                    }
+                    project_activity = EncodeInput(project_activity,FPA);
                 
+                console.WriteLine("A NAEK47 URL has been created:\n");
+                console.WriteLine("https://companyserver.com/content/{0}/files/{1}/{1}Report.pdf", FPN, FPA);
                 
                 
             }
