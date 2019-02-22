@@ -68,7 +68,7 @@ namespace URLEncoder
 		{
                 	value = value.Replace(" ", "%20");
 		}
-                value = value.Replace("<", "%3C");
+                /*value = value.Replace("<", "%3C");
                 value = value.Replace(">", "%3E");
                 value = value.Replace("#", "%23");
                 value = value.Replace("%", "%25");
@@ -88,7 +88,7 @@ namespace URLEncoder
                 value = value.Replace("^", "%5E");
                 value = value.Replace("[", "%5B");
                 value = value.Replace("]", "%5D");
-                value = value.Replace("`", "%60");
+                value = value.Replace("`", "%60");*/
                                       
                 EncodedValue = value;
             }                                    
