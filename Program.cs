@@ -9,6 +9,8 @@ using System;
                 console.WriteLine("NAEK47 URL GENERATOR");
                 string project_name = "";
                 string project_activity = "";
+                string FPN = "";
+                string FPA = "";
                 
                 a:
                     console.WriteLine("Enter da project name:");
@@ -16,6 +18,7 @@ using System;
                     if(FirstCheck(project_name) == 1){
                         goto a;
                     }
+                    
                     
                 
                 
@@ -37,5 +40,58 @@ using System;
                     return 0;
                 }
         }
-
         
+         string EncodeInput(string Input, string Output)
+         {
+                if (Input.Contains(" "))
+                {
+                Input = Input.Replace("%", "%20");
+                }
+             
+                if (Input.Contains(";"))
+                {
+                Input = Input.Replace(";", "%3B");
+                }
+             
+                if (Input.Contains("/"))
+                {
+                Input = Input.Replace("/", "%2F");
+                }
+             
+                if (Input.Contains("?"))
+                {
+                Input = Input.Replace("?", "%3F");
+                }
+             
+                if (Input.Contains(":"))
+                {
+                Input = Input.Replace(":", "%3A");
+                }
+             
+                if (Input.Contains("@"))
+                {
+                Input = Input.Replace("@", "%40");
+                }
+             
+                if (Input.Contains("&"))
+                {
+                Input = Input.Replace("&", "%3B");
+                }
+             
+                if (Input.Contains("="))
+                {
+                Input = Input.Replace("=", "%3B");
+                }
+             
+                if (Input.Contains("+"))
+                {
+                Input = Input.Replace("+", "%3B");
+                }
+             
+                if (Input.Contains("$"))
+                {
+                Input = Input.Replace("$", "%3B");
+                }
+                First Check = Output;
+                return Output;
+         }
