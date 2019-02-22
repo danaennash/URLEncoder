@@ -64,10 +64,15 @@ namespace URLEncoder
             
             foreach (char character in value.ToCharArray())
             {
+		    
+		    
 		if(value.Contains(" "))
 		{
                 	value = value.Replace(" ", "%20");
 		}
+		    
+		string charstring = character.ToString();
+                EncodedValue += hex.GetValueOrDefault(charstring, charstring);
                 /*value = value.Replace("<", "%3C");
                 value = value.Replace(">", "%3E");
                 value = value.Replace("#", "%23");
@@ -89,8 +94,6 @@ namespace URLEncoder
                 value = value.Replace("[", "%5B");
                 value = value.Replace("]", "%5D");
                 value = value.Replace("`", "%60");*/
-                                      
-                EncodedValue = value;
             }                                    
             return EncodedValue;
         }
