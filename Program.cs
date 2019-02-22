@@ -1,127 +1,87 @@
 using System;
 
-    namespace URLEncoder
+namespace URLEncoder
+{
+    class Program
     {
-        class Program
-        {
-            static void Main(string[] args){
-                
-                       public string UrlTemp = "https://companyserver.com/content/[project_name]/files/[activity_name]/[activity_name]Report.pdf (Links to an external site.)Links to an external site.";
+        static string UrlFormat = "https://companyserver.com/content/{0}/files/{1}/{1}Report.pdf";
 
-                
-                console.WriteLine("NAEK47 URL GENERATOR\n");
-                string project_name = "";
-                string project_activity = "";
-                string FPN = "";
-                string FPA = "";
-                
-                a:
-                    console.WriteLine("Enter da project name:\n");
-                    project_name = Console.ReadLine();
-                    if(FirstCheck(project_name) == 1){
-                        goto a;
-                    }
-                    project_name = EncodeInput(project_name,FPN);
-                b:
-                    console.WriteLine("Enter da activity name:\n");
-                    project_activity = Console.ReadLine();
-                    if(FirstCheck(project_activity) == 1){
-                        goto b;
-                    }
-                    project_activity = EncodeInput(project_activity,FPA);
-                
-                console.WriteLine("A NAEK47 URL has been created:\n");
-                
-                c:
-                    Console.WriteLine("Want another custom NAEK URL? (y/n) ");
-                    string response = Console.ReadLine();
-                
-                switch (response)
+        static void Main(string[] args)
+        {
+            a:
+            Console.WriteLine("Please enter a project name:\n");
+            string project_name = Console.ReadLine();
+            if (IsValid(project_name) is false)
             {
-                case "y":
+                goto a;
+            }
+            project_name = CheckInput(project_name);
+
+            b:
+            Console.WriteLine("Please enter an activity name:\n");
+            string activity_name = Console.ReadLine();
+            if (IsValid(activity_name) is false)
+            {
+                goto b;
+            }
+            activity_name = CheckInput(activity_name);
+
+            Console.WriteLine(CreateUrl(project_name, activity_name));
+
+            c:
+            Console.WriteLine("Would you like to create another URL? (Y/N) ");
+            string answer = Console.ReadLine();
+
+            switch (answer)
+            {
+                case "Y":
                     goto a;
-                case "n":
+                case "N":
                     break;
                 default:
                     Console.WriteLine("You made an invalid choice.\n");
                     goto c;
             }
-            }
         }
-    }
 
-        static bool FirstCheck(string FirstCheck)
+
+        static bool IsValid(string input)
         {
-          foreach (char character in FirstCheck)
+            foreach (char character in input)
             {
                 if (character <= 0x1F || character == 0x7F)
                 {
-                    Console.WriteLine("ERROR. Contains a control character, try again.");
-                    return 1;
-                }  
-                else{
-                    return 0;
+                    Console.WriteLine("Invalid input. Contains a control character. ");
+                    return false;
                 }
             }
+            return true;
         }
-        
-         string EncodeInput(string Input, string Output)
-         {
-                if (Input.Contains(" "))
-                {
-                Input = Input.Replace("%", "%20");
-                }
-             
-                if (Input.Contains(";"))
-                {
-                Input = Input.Replace(";", "%3B");
-                }
-             
-                if (Input.Contains("/"))
-                {
-                Input = Input.Replace("/", "%2F");
-                }
-             
-                if (Input.Contains("?"))
-                {
-                Input = Input.Replace("?", "%3F");
-                }
-             
-                if (Input.Contains(":"))
-                {
-                Input = Input.Replace(":", "%3A");
-                }
-             
-                if (Input.Contains("@"))
-                {
-                Input = Input.Replace("@", "%40");
-                }
-             
-                if (Input.Contains("&"))
-                {
-                Input = Input.Replace("&", "%3B");
-                }
-             
-                if (Input.Contains("="))
-                {
-                Input = Input.Replace("=", "%3B");
-                }
-             
-                if (Input.Contains("+"))
-                {
-                Input = Input.Replace("+", "%3B");
-                }
-             
-                if (Input.Contains("$"))
-                {
-                Input = Input.Replace("$", "%3B");
-                }
-             
-                FirstCheck = Output;
-                return Output;
-         }
 
-        static string CreateUrl(string FPN, string FPA)
+
+        static string CheckInput(string input)
         {
-            return String.Format(UrlTemp, FPN, FPA);
+            string[] illegal = new string[] { "%", " ", "<", ">", "#", "\"", ";", "/", "?", ":", "@", "&", "=", "+", "$", ",", "{", "}", "|", "\\", "^", "[", "]", "`" };
+            string[] replacement = new string[] { "%25", "%20", "%3C", "%3E", "%23", "%22", "%3B", "%2F", "%3F", "%3A", "%40", "%26", "%3D", "%2B", "%24", "%2C", "%7B", "%7D", "%7C", "%5C", "%5E", "%5B", "%5D", "%60" };
+
+            foreach (string element in illegal)
+            {
+                int index = Array.IndexOf(illegal, element);
+
+                if (input.Contains(element))
+                {
+                    input = input.Replace(element, replacement[index]);
+                }
+            }
+            return String.Format(input);
         }
+
+
+        static string CreateUrl(string project_name, string activity_name)
+        {
+            return String.Format(UrlFormat, project_name, activity_name);
+        }
+
+
+    }
+}
