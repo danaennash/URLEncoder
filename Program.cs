@@ -66,18 +66,18 @@ namespace URLEncoder
         }
 
 
-        static string CheckInput(string input)
+       static string CheckInput(string input)
         {
-            string[] badLetter = new string[] { "%", " ", "<", ">", "#", "\"", ";", "/", "?", ":", "@", "&", "=", "+", "$", ",", "{", "}", "|", "\\", "^", "[", "]", "`" };
-            string[] replace = new string[] { "%25", "%20", "%3C", "%3E", "%23", "%22", "%3B", "%2F", "%3F", "%3A", "%40", "%26", "%3D", "%2B", "%24", "%2C", "%7B", "%7D", "%7C", "%5C", "%5E", "%5B", "%5D", "%60" };
+            string[] illegal = new string[] { "%", " ", "<", ">", "#", "\"", ";", "/", "?", ":", "@", "&", "=", "+", "$", ",", "{", "}", "|", "\\", "^", "[", "]", "`" };
+            string[] replacement = new string[] { "%25", "%20", "%3C", "%3E", "%23", "%22", "%3B", "%2F", "%3F", "%3A", "%40", "%26", "%3D", "%2B", "%24", "%2C", "%7B", "%7D", "%7C", "%5C", "%5E", "%5B", "%5D", "%60" };
 
-            foreach (string element in badLetter)
+            foreach (string element in illegal)
             {
-                int index = Array.IndexOf(badLetter, element);
+                int index = Array.IndexOf(illegal, element);
 
-                if (index.Contains(element))
+                if (input.Contains(element))
                 {
-                    input = input.Replace(badLetter, replace[index]);
+                    input = input.Replace(element, replacement[index]);
                 }
             }
             return String.Format(input);
