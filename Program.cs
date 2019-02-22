@@ -6,7 +6,7 @@ using System;
         {
             static void Main(string[] args){
                 
-                        static string UrlTemp = "https://companyserver.com/content/[project_name]/files/[activity_name]/[activity_name]Report.pdf (Links to an external site.)Links to an external site.";
+                       public string UrlTemp = "https://companyserver.com/content/[project_name]/files/[activity_name]/[activity_name]Report.pdf (Links to an external site.)Links to an external site.";
 
                 
                 console.WriteLine("NAEK47 URL GENERATOR\n");
