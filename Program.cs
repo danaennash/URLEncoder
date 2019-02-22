@@ -4,7 +4,7 @@ namespace URLEncoder
 {
     class Program
     {
-        static string UrlTemp = "https://companyserver.com/content/[project_name]/files/[activity_name]/[activity_name]Report.pdf"
+        static string UrlTemp = "https://companyserver.com/content/[project_name]/files/[activity_name]/[activity_name]Report.pdf";
 
 
 
