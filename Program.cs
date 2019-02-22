@@ -30,7 +30,20 @@ using System;
                 console.WriteLine("A NAEK47 URL has been created:\n");
                 console.WriteLine("https://companyserver.com/content/{0}/files/{1}/{1}Report.pdf", FPN, FPA);
                 
+                c:
+                    Console.WriteLine("Want another custom NAEK URL? (y/n) ");
+                    string response = Console.ReadLine();
                 
+                switch (response)
+            {
+                case "y":
+                    goto a;
+                case "b":
+                    break;
+                default:
+                    Console.WriteLine("You made an invalid choice.\n");
+                    goto c;
+            }
             }
         }
     }
