@@ -62,7 +62,7 @@ namespace URLEncoder
         {
             string EncodedValue = "";
             
-            foreach (char character in value)
+            foreach (char character in value.ToCharArray())
             {
 		if(value.contains(" "))
 		{
