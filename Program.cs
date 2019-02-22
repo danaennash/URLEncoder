@@ -29,7 +29,7 @@ namespace URLEncoder
             }
             AN = CheckInput(AN);
 
-            Console.WriteLine(CreateUrl(PN, AN));
+            Console.WriteLine(CustomURLMaker(PN, AN));
 
             finalstep:
             Console.WriteLine("Want another NAEK Custom URL? (yes/no) ");
