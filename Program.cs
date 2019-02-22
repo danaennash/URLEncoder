@@ -73,11 +73,11 @@ namespace URLEncoder
 
             foreach (string element in badLetter)
             {
-                int integer = Array.IndexOf(badLetter, element);
+                int index = Array.IndexOf(badLetter, element);
 
-                if (input.Contains(element))
+                if (index.Contains(element))
                 {
-                    input = input.Replace(badLetter, replace[integer]);
+                    input = input.Replace(badLetter, replace[index]);
                 }
             }
             return String.Format(input);
