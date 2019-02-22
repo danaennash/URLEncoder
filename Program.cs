@@ -9,19 +9,19 @@ namespace URLEncoder
         //MAIN PROGRAM   
         static void Main(string[] args)
         {
-            console.WriteLine("NAEK47 CUSTOM URL GENERATOR\n");
+            Console.WriteLine("NAEK47 CUSTOM URL GENERATOR\n");
             
             do
             {
-                console.Write("Enter project name: \n");
+                Console.Write("Enter project name: \n");
                     string projectName = GetUserInput();
                 
-                console.Write("Enter activity name: \n");
+                Console.Write("Enter activity name: \n");
                     string activityName = GetUserInput();
                 
-                console.WriteLine(createURL(projectName,activityName));
+                Console.WriteLine(createURL(projectName,activityName));
                 
-                console.Write("Want another NAEK47 CUSTUM URL GENERATOR? (y/n): ");
+                Console.Write("Want another NAEK47 CUSTUM URL GENERATOR? (y/n): ");
             } while (Console.ReadLine().ToLower().Equals("y"));
         }
         
@@ -35,6 +35,7 @@ namespace URLEncoder
 		            input = Console.ReadLine();
 		            if (IsValid(input)) return input;
 		            Console.Write("The input contains invalid characters. Enter again: ");
+			    
 	              } while (true);
         }
         
@@ -44,12 +45,12 @@ namespace URLEncoder
                 
                 if(character >= 0x00 || character <= 0x1F)
                 {
-                    console.WriteLine("Can't use control characters. Try another option:\n");
+                    Console.WriteLine("Can't use control characters. Try another option:\n");
                     return false;
                 }
                 else if(character == 0x7F)
                 {
-                    console.WriteLine("Can't use control characters. Try another option:\n");
+                    Console.WriteLine("Can't use control characters. Try another option:\n");
                     return false;
                 }
               
@@ -93,8 +94,8 @@ namespace URLEncoder
             return EncodedValue;
         }
                                       
-        static string CreateURL(string projectName, string activityName) {
-            
+        static string createURL(string projectName, string activityName)
+	{   
             return String.Format(urlFormat, projectName, activityName);
         }
         
