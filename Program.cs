@@ -19,19 +19,19 @@ using System;
         }
     }
 
-        public int CheckForBadCode(string CheckBC)
+        public int FirstCheck(string FirstCheck)
         {
-            if (CheckBC == "%00"|| "%01"|| "%02"|| "%03"|| "%04"|| "%05"|| "%06"|| "%07"|| "%08"|| "%07"|| "%08"|| "%09"){
+            if (FirstCheck == "%00"|| "%01"|| "%02"|| "%03"|| "%04"|| "%05"|| "%06"|| "%07"|| "%08"|| "%07"|| "%08"|| "%09"){
                 
                 console.WriteLine("Not valid, Dat's a control character.");
                 return 1;
             }
-            else if (CheckBC == "%0A"|| "%0B"|| "%0C"|| "%0D"|| "%0E"|| "%0F"|| "%1A"|| "%1B"|| "%1C"|| "%1D"|| "%1E"|| "%1F"){
+            else if (FirstCheck == "%0A"|| "%0B"|| "%0C"|| "%0D"|| "%0E"|| "%0F"|| "%1A"|| "%1B"|| "%1C"|| "%1D"|| "%1E"|| "%1F"){
                 
                 console.WriteLine("Not valid, Dat's a control character.");
                 return 1;
             }
-            else if (CheckBC == "%10"|| "%11"|| "%12"|| "%13"|| "%14"|| "%15"|| "%16"|| "%17"|| "%18"|| "%19"){
+            else if (FirstCheck == "%10"|| "%11"|| "%12"|| "%13"|| "%14"|| "%15"|| "%16"|| "%17"|| "%18"|| "%19"){
                 
                 console.WriteLine("Not valid, Dat's a control character.");
                 return 1;
