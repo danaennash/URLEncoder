@@ -56,10 +56,11 @@ using System;
                 {
                     Console.WriteLine("ERROR. Contains a control character, try again.");
                     return 1;
-            }
+                }  
                 else{
                     return 0;
                 }
+            }
         }
         
          string EncodeInput(string Input, string Output)
@@ -113,6 +114,7 @@ using System;
                 {
                 Input = Input.Replace("$", "%3B");
                 }
-                First Check = Output;
+             
+                FirstCheck = Output;
                 return Output;
          }
