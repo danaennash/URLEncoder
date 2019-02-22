@@ -2,7 +2,10 @@ using System;
 
     namespace URLEncoder
     {
-        
+        public int CheckForBadCode(string Code)
+        {
+            if (Code == "%00")
+        }
         class Program
         {
             static void Main(string[] args){
@@ -12,7 +15,8 @@ using System;
                 string project_activity = "";
                 
                 console.WriteLine("Enter da project name:");
-                prroject_name = Console.ReadLine();
+                project_name = Console.ReadLine();
+                
                 
    
             }
