@@ -26,4 +26,17 @@ using System;
                 console.WriteLine("Not valid, Dat's a control character.");
                 return 1;
             }
+            else if (CheckBC == "%0A"|| "%0B"|| "%0C"|| "%0D"|| "%0E"|| "%0F"|| "%1A"|| "%1B"|| "%1C"|| "%1D"|| "%1E"|| "%1F"){
+                
+                console.WriteLine("Not valid, Dat's a control character.");
+                return 1;
+            }
+            else if (CheckBC == "%10"|| "%11"|| "%12"|| "%13"|| "%14"|| "%15"|| "%16"|| "%17"|| "%18"|| "%19"){
+                
+                console.WriteLine("Not valid, Dat's a control character.");
+                return 1;
+            }
+            else{
+                return 0;
+            }
         }
