@@ -64,7 +64,7 @@ namespace URLEncoder
             
             foreach (char character in value.ToCharArray())
             {
-		if(value.contains(" "))
+		if(value.Contains(" "))
 		{
                 	value = value.Replace(" ", "%20");
 		}
