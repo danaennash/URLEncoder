@@ -6,7 +6,7 @@ using System;
         {
             if (Code == "%00"||"%01"||"%02"||"%03"||"%04"||"%05"||"%06"||"%07"||"%08"||"%09"){
                 
-                Console.WriteLine("Not valid, Dat's a control character");
+                console.WriteLine("Not valid, Dat's a control character");
                 return 1;
             }
         }
