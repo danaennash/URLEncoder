@@ -49,18 +49,19 @@ namespace URLEncoder
         }
         
         
-        //FUNCTIONS
+        //LIL DICTIONARY
 	    
-	/*static string GetUserInput()
-        {
-            string input = "";
-            do
-            {
-                input = Console.ReadLine();
-                if (IsValid(input)) return false;
-                Console.Write("This input contains invalid characters. Please enter again: ");
-            } while (true);
-        }*/
+	static Dictionary<string, string> hex = new Dictionary<string, string>()
+        	{
+            		{"<", "%3C"},{">", "%3E"},{"#", "%23"},{"%", "%25" }, 
+            		{"\"", "%22"},{";", "%3B"},{"/", "%2F"},{"?", "%3F"}, 
+            		{":", "%3A"},{"@", "%40"},{"=", "%3D"},{"+", "%2B"}, 
+            		{"$", "%24"},{",", "%2C"},{"{", "%7B"},{"}", "%7D"}, 
+            		{"|", "%7C"},{"\\", "%5C"},{"^", "%5E"},{"[", "%5B"}, 
+           		{"]", "%5D"},{"`", "%60"},{" ", "%20"}
+        	};
+	    
+	//FUNCTIONS
 
         static bool IsValid(string input)
         {
@@ -73,82 +74,7 @@ namespace URLEncoder
                 }
             }
             return true;
-        }
-        /*static string GetUserInput()                             
-        {
-	        string input = "";
-	            do
-	              {   
-		            input = Console.ReadLine();
-		            if (IsValid(input)) return input;
-		            Console.Write("Can't contain control characters. Try another option! ");
-			    
-	              } while (true);
-        }
-        
-         static bool IsValid(string input)
-        {
-            foreach (char character in input)
-            {
-                if (character <= 0x1F || character == 0x7F)
-                {
-                    return false;
-			
-                }
-            }
-            return true;
-        }*/
-
-        
-        /*static string Encode(string value)
-        {
-            string EncodedValue = "";
-            
-            foreach (char character in value.ToCharArray())
-            {
-		    
-		    
-		if(value.Contains(" "))
-		{
-                	value = value.Replace(" ", "%20");
-		}
-		    
-		string charstring = character.ToString();
-                EncodedValue += hex.GetValueOrDefault(charstring, charstring);
-                value = value.Replace("<", "%3C");
-                value = value.Replace(">", "%3E");
-                value = value.Replace("#", "%23");
-                value = value.Replace("%", "%25");
-                value = value.Replace(";", "%3B");
-                value = value.Replace("/", "%2F");
-                value = value.Replace("?", "%3F");
-                value = value.Replace(":", "%3A");
-                value = value.Replace("@", "%40");
-                value = value.Replace("&", "%26");
-                value = value.Replace("=", "%3D");
-                value = value.Replace("+", "%2B");
-                value = value.Replace("$", "%24");
-                value = value.Replace(",", "%2C");
-                value = value.Replace("{", "%7B");
-                value = value.Replace("}", "%7D");
-                value = value.Replace("|", "%7C");
-                value = value.Replace("^", "%5E");
-                value = value.Replace("[", "%5B");
-                value = value.Replace("]", "%5D");
-                value = value.Replace("`", "%60");
-            }                                    
-            return EncodedValue;
-        }*/
-	    
-	static Dictionary<string, string> hex = new Dictionary<string, string>()
-        {
-            {"<", "%3C"}, {">", "%3E"}, {"#", "%23"}, {"%", "%25" }, 
-            {"\"", "%22"}, {";", "%3B"}, {"/", "%2F"}, {"?", "%3F"}, 
-            {":", "%3A"}, {"@", "%40"}, {"=", "%3D"}, {"+", "%2B"}, 
-            {"$", "%24"}, {",", "%2C"}, {"{", "%7B"}, {"}", "%7D"}, 
-            {"|", "%7C"}, {"\\", "%5C"}, {"^", "%5E"}, {"[", "%5B"}, 
-            {"]", "%5D"}, {"`", "%60"}, {" ", "%20"}
-        };
+        }	   
 
         static string Encode(string value)
         {
