@@ -39,18 +39,19 @@ namespace URLEncoder
 	              } while (true);
         }
         
-        static bool IsValid(string input){
-            
-            foreach (char character in input){
-                
-                if (character <= 0x1F || character == 0x7F){
-                    Console.WriteLine("Can't use control characters. Try another Option!");
+         static bool IsValid(string input)
+        {
+            foreach (char character in input)
+            {
+                if (character <= 0x1F || character == 0x7F)
+                {
+                    Console.WriteLine("Can't contain control characters. Try another option! ");
                     return false;
                 }
-            return true;  
             }
-            
+            return true;
         }
+
         
         /*static string Encode(string value)
         {
