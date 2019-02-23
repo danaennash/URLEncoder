@@ -11,16 +11,28 @@ namespace URLEncoder
         {
             Console.WriteLine("NAEK47 CUSTOM URL GENERATOR\n");
             
-            do
-            {
-                Console.Write("Enter project name: \n");
-		     string projectName = GetUserInput();
+            partOne:
+            	Console.WriteLine("Enter project name:\n");
+            	string projectName = Console.ReadLine();
+            	if (IsValid(projectName) is false)
+            		{
+                		goto partOne;
+            		}
+            		projectName = Encode(projectName);
 
-                Console.Write("Enter activity name: \n");
-                    string activityName = GetUserInput();
+             partTwo:
+            	Console.WriteLine("Enter the activity:\n");
+            	string activityName = Console.ReadLine();
+            	if (IsValid(activityName) is false)
+            		{
+                		goto partTwo;
+            		}		
+            		activityName = Encode(activityName);
+
+            		Console.WriteLine(CreateUrl(projectName, activityName));
                 
-                Console.WriteLine(createURL(projectName,activityName));
-                
+               
+              partThree:
                 Console.Write("Want another NAEK47 CUSTUM URL GENERATOR? (y/n): ");
             } while (Console.ReadLine().ToLower().Equals("y"));
         }
@@ -28,16 +40,16 @@ namespace URLEncoder
         
         //FUNCTIONS
 	    
-	static string GetUserInput()
+	/*static string GetUserInput()
         {
             string input = "";
             do
             {
                 input = Console.ReadLine();
-                if (IsValid(input)) return input;
+                if (IsValid(input)) return false;
                 Console.Write("This input contains invalid characters. Please enter again: ");
             } while (true);
-        }
+        }*/
 
         static bool IsValid(string input)
         {
@@ -45,6 +57,7 @@ namespace URLEncoder
             {
                 if(character <= 0x1F && character >= 0x00 || character == 0x7F)
                 {
+		    Console.WriteLine("Cannot contain control characters. Try another option!");
                     return false;
                 }
             }
