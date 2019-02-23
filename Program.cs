@@ -33,8 +33,8 @@ namespace URLEncoder
 	            do
 	              {   
 		            input = Console.ReadLine();
-		            if (IsValid(input)) return input;
-		            Console.Write("The input contains invalid characters. Enter again: ");
+		            if (IsValid(input)) return false;
+		            Console.Write("Can't contain control characters. Try another option! ");
 			    
 	              } while (true);
         }
@@ -45,7 +45,6 @@ namespace URLEncoder
             {
                 if (character <= 0x1F || character == 0x7F)
                 {
-                    Console.WriteLine("Can't contain control characters. Try another option! ");
                     return false;
                 }
             }
