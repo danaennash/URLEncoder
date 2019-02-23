@@ -51,7 +51,7 @@ namespace URLEncoder
         
         //LIL DICTIONARY
 	    
-	static Dictionary<string, string> hex = new Dictionary<string, string>()
+	static Dictionary<string, string> naelib = new Dictionary<string, string>()
         	{
             		{"<", "%3C"},{">", "%3E"},{"#", "%23"},{"%", "%25" }, 
             		{"\"", "%22"},{";", "%3B"},{"/", "%2F"},{"?", "%3F"}, 
@@ -82,7 +82,7 @@ namespace URLEncoder
             foreach(char character in value.ToCharArray())
             {
                 string charstring = character.ToString();
-                encodedValue += hex.GetValueOrDefault(charstring, charstring);
+                encodedValue += naelib.GetValueOrDefault(charstring, charstring);
             }
             return encodedValue;
         }    
