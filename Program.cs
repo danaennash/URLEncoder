@@ -29,7 +29,7 @@ namespace URLEncoder
             		}		
             		activityName = Encode(activityName);
 
-            		Console.WriteLine(CreateUrl(projectName, activityName));
+            		Console.WriteLine(createURL(projectName, activityName));
                 
                
               partThree:
