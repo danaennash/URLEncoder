@@ -33,7 +33,7 @@ namespace URLEncoder
                 
                
               partThree:
-                Console.WriteLine("Want another NAEK47 CUSTUM URL GENERATOR? (enter y or any key to exit): ");
+                Console.WriteLine("Want another NAEK47 CUSTUM URL GENERATOR? (y/n): ");
 		string answer = Console.ReadLine();
 
             	switch (answer)
@@ -43,6 +43,7 @@ namespace URLEncoder
                 	case "n":
                     		break;
 			default:
+				Console.WriteLine("Not an option. Try again.");
 				goto partThree;
 			} 
         }
