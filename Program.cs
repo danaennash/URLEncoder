@@ -33,7 +33,7 @@ namespace URLEncoder
                 
                
               partThree:
-                Console.WriteLine("Want another NAEK47 CUSTUM URL GENERATOR? (y/n): ");
+                Console.WriteLine("Want another NAEK47 CUSTOM URL GENERATOR? (y/n): ");
 		string answer = Console.ReadLine();
 
             	switch (answer)
