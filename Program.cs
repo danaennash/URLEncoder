@@ -14,8 +14,8 @@ namespace URLEncoder
             do
             {
                 Console.Write("Enter project name: \n");
-                    string projectName = GetUserInput();
-                
+		     string projectName = GetUserInput();
+
                 Console.Write("Enter activity name: \n");
                     string activityName = GetUserInput();
                 
@@ -27,7 +27,30 @@ namespace URLEncoder
         
         
         //FUNCTIONS
-        static string GetUserInput()                             
+	    
+	static string GetUserInput()
+        {
+            string input = "";
+            do
+            {
+                input = Console.ReadLine();
+                if (IsValid(input)) return input;
+                Console.Write("This input contains invalid characters. Please enter again: ");
+            } while (true);
+        }
+
+        static bool IsValid(string input)
+        {
+            foreach(char character in input.ToCharArray())
+            {
+                if(character <= 0x1F && character >= 0x00 || character == 0x7F)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        /*static string GetUserInput()                             
         {
 	        string input = "";
 	            do
@@ -45,12 +68,12 @@ namespace URLEncoder
             {
                 if (character <= 0x1F || character == 0x7F)
                 {
-                    return input;
+                    return false;
 			
                 }
             }
             return true;
-        }
+        }*/
 
         
         /*static string Encode(string value)
