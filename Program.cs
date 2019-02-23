@@ -67,7 +67,7 @@ namespace URLEncoder
         {
             foreach(char character in input)
             {
-                if (character <= 0x1F || character == 0x7F)
+                if (character == "00"||"01"||"02"||"03"||"04"||"05"||"06"||"07"||"08"||"09")
                 {
 		    Console.WriteLine("Cannot contain control characters. Try another option!");
                     return false;
