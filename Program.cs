@@ -58,7 +58,7 @@ namespace URLEncoder
             return true;
         }
         
-        static string Encode(string value)
+        /*static string Encode(string value)
         {
             string EncodedValue = "";
             
@@ -73,7 +73,7 @@ namespace URLEncoder
 		    
 		string charstring = character.ToString();
                 EncodedValue += hex.GetValueOrDefault(charstring, charstring);
-                /*value = value.Replace("<", "%3C");
+                value = value.Replace("<", "%3C");
                 value = value.Replace(">", "%3E");
                 value = value.Replace("#", "%23");
                 value = value.Replace("%", "%25");
@@ -93,10 +93,31 @@ namespace URLEncoder
                 value = value.Replace("^", "%5E");
                 value = value.Replace("[", "%5B");
                 value = value.Replace("]", "%5D");
-                value = value.Replace("`", "%60");*/
+                value = value.Replace("`", "%60");
             }                                    
             return EncodedValue;
-        }
+        }*/
+	    
+	static Dictionary<string, string> hex = new Dictionary<string, string>()
+        {
+            {"<", "%3C"}, {">", "%3E"}, {"#", "%23"}, {"%", "%25" }, 
+            {"\"", "%22"}, {";", "%3B"}, {"/", "%2F"}, {"?", "%3F"}, 
+            {":", "%3A"}, {"@", "%40"}, {"=", "%3D"}, {"+", "%2B"}, 
+            {"$", "%24"}, {",", "%2C"}, {"{", "%7B"}, {"}", "%7D"}, 
+            {"|", "%7C"}, {"\\", "%5C"}, {"^", "%5E"}, {"[", "%5B"}, 
+            {"]", "%5D"}, {"`", "%60"}, {" ", "%20"}
+        };
+
+        static string Encode(string value)
+        {
+            string encodedValue = "";
+            foreach(char character in value.ToCharArray())
+            {
+                string charstring = character.ToString();
+                encodedValue += hex.GetValueOrDefault(charstring, charstring);
+            }
+            return encodedValue;
+        }    
                                       
         static string createURL(string projectName, string activityName)
 	{   
