@@ -47,9 +47,9 @@ namespace URLEncoder
                     Console.WriteLine("Can't use control characters. Try another Option!");
                     return false;
                 }
-              
+            return true;  
             }
-            return true;
+            
         }
         
         /*static string Encode(string value)
