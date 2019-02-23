@@ -41,7 +41,7 @@ namespace URLEncoder
         
         static bool IsValid(string input){
             
-            foreach (char character in input.ToCharArray()){
+            foreach (char character in input){
                 
                 if(character <= 0x00 || character == 0x1F)
                 {
