@@ -5,7 +5,9 @@ namespace URLEncoder
 {
     class Program
     {
+	    
         static string urlFormat = "https://companyserver.com/content/{0}/files/{1}/{1}Report.pdf";
+	    
         //MAIN PROGRAM   
         static void Main(string[] args)
         {
@@ -34,17 +36,17 @@ namespace URLEncoder
                
               partThree:
                 Console.WriteLine("Want another NAEK47 CUSTOM URL GENERATOR? (y/n): ");
-		string answer = Console.ReadLine();
+		string choice = Console.ReadLine();
 
-            	switch (answer)
+            	switch (choice)
             		{
                 	case "y":
                    		 goto partOne;
                 	case "n":
-                    		break;
+                    		 break;
 			default:
-				Console.WriteLine("Not an option. Try again.");
-				goto partThree;
+				 Console.WriteLine("Not an option. Try again.");
+				 goto partThree;
 			} 
         }
         
