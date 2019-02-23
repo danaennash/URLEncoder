@@ -48,7 +48,7 @@ namespace URLEncoder
                     return input;
                 }
             }
-            return 0;
+            return true;
         }
 
         
