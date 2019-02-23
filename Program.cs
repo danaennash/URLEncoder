@@ -9,7 +9,7 @@ namespace URLEncoder
         //MAIN PROGRAM   
         static void Main(string[] args)
         {
-            Console.WriteLine("\tNAEK47 CUSTOM URL GENERATOR\n");
+            Console.WriteLine("\n\tNAEK47 CUSTOM URL GENERATOR\n");
             
             partOne:
             	Console.WriteLine("Enter project name:\n");
