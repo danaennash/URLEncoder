@@ -46,6 +46,7 @@ namespace URLEncoder
                 if (character <= 0x1F || character == 0x7F)
                 {
                     return false;
+			
                 }
             }
             return true;
