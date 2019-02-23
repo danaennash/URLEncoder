@@ -43,14 +43,8 @@ namespace URLEncoder
             
             foreach (char character in input){
                 
-                if(character <= 0x00 || character == 0x1F)
-                {
-                    Console.WriteLine("Can't use control characters. Try another option:\n");
-                    return false;
-                }
-                else if(character == 0x7F)
-                {
-                    Console.WriteLine("Can't use control characters. Try another option:\n");
+                if (character <= 0x1F || character == 0x7F){
+                    Console.WriteLine("Can't use control characters. Try another Option!");
                     return false;
                 }
               
