@@ -40,8 +40,10 @@ namespace URLEncoder
             		{
                 	case "y":
                    		 goto partOne;
-                	default:
+                	case "n":
                     		break;
+			default:
+				goto partThree;
 			} 
         }
         
