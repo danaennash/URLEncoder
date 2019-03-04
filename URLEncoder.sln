@@ -1,5 +1,0 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLEncoder", "URLEncoder.csproj", "{DBABC8C3-5E02-4C70-A2E7-1AFCE10CF5BF}"
-EndProject
-Global
